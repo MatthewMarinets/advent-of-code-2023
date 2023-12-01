@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Zig: current file",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/zig-out/bin/aoc",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build zig",
+            "presentation": {
+                "hidden": false,
+                "group": "zig",
+                "order": 1,
+            }
+        },
+    ]
+}
