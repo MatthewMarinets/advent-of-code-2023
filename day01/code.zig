@@ -158,8 +158,8 @@ pub fn main() !void {
     defer _ = gp.deinit();
     const allocator = gp.allocator();
 
-    const file = try std.fs.cwd().openFile("day1/input.txt", .{});
-    // const file = try std.fs.cwd().openFile("day1/sample_input2.txt", .{});
+    const file = try std.fs.cwd().openFile("day01/input.txt", .{});
+    // const file = try std.fs.cwd().openFile("day01/sample_input2.txt", .{});
     defer file.close();
 
     // Read the contents

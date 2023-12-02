@@ -28,10 +28,28 @@ pub fn build(b: *std.Build) void {
     // location when the user invokes the "install" step (the default step when
     // running `zig build`).
     // b.installArtifact(lib);
+    const sources = [_][]const u8{ "day01/code.zig", "day02/code.zig" };
 
+    for (0..(sources.len - 1)) |index| {
+        const source = sources[index];
+        const exec_name = source[0..5];
+
+        const exe = b.addExecutable(.{
+            .name = exec_name,
+            .root_source_file = .{ .path = source },
+            .target = target,
+            .optimize = optimize,
+        });
+
+        // This declares intent for the executable to be installed into the
+        // standard location when the user invokes the "install" step (the default
+        // step when running `zig build`).
+        b.installArtifact(exe);
+    }
+    const source = sources[sources.len - 1];
     const exe = b.addExecutable(.{
         .name = "aoc",
-        .root_source_file = .{ .path = "day1/day1.zig" },
+        .root_source_file = .{ .path = source },
         .target = target,
         .optimize = optimize,
     });
