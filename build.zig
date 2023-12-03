@@ -28,7 +28,7 @@ pub fn build(b: *std.Build) void {
     // location when the user invokes the "install" step (the default step when
     // running `zig build`).
     // b.installArtifact(lib);
-    const sources = [_][]const u8{ "day01/code.zig", "day02/code.zig" };
+    const sources = [_][]const u8{ "day01/code.zig", "day02/code.zig", "day03/code.zig" };
 
     for (0..(sources.len - 1)) |index| {
         const source = sources[index];
